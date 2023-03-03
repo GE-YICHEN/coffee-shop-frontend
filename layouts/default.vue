@@ -1,13 +1,13 @@
 <template>
   <div>
-    <slot></slot>
+    <TheHeader />
+    <main class="pt-20">
+      <slot></slot>
+    </main>
+    <TheFooter />
   </div>
 </template>
 
-<script setup>
+<script setup></script>
 
-</script>
-
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
