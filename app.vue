@@ -34,6 +34,11 @@ body {
   margin: 0;
   padding: 0;
   overflow: overlay;
+  scroll-behavior: smooth;
+}
+
+* {
+  scroll-margin-top: 5rem;
 }
 
 ::-webkit-scrollbar {
