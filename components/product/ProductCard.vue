@@ -1,5 +1,8 @@
 <template>
-  <div class="product w-56 rounded-lg overflow-hidden shadow-xl cursor-pointer">
+  <div
+    class="product w-56 rounded-lg overflow-hidden shadow-xl cursor-pointer"
+    @click="handleClickProduct()"
+  >
     <Swiper
       :pagination="{
         clickable: true
@@ -24,14 +27,14 @@
           <p class="font-bold">${{ props.product.onSalePrice }}</p>
         </div>
         <div class="flex items-center gap-4">
-          <nuxt-link class="bg-[#483519] rounded-full p-2" :to="`/products/${props.product.id}`">
+          <button class="bg-[#483519] rounded-full p-2" @click="handleClickProduct()">
             <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
               <path
                 fill="#fff"
                 d="m207.8 131.6l12.1-66.9a4.2 4.2 0 0 0-.8-3.3A4.1 4.1 0 0 0 216 60H51.3l-5.4-30.1A12 12 0 0 0 34.1 20H16a4 4 0 0 0 0 8h18.1a4 4 0 0 1 3.9 3.3l27.9 153.3a24 24 0 1 0 32 3.4h68.2a24 24 0 1 0 17.9-8H73.2l-5.9-32h120.8a20 20 0 0 0 19.7-16.4ZM96 204a16 16 0 1 1-16-16a16 16 0 0 1 16 16Zm104 0a16 16 0 1 1-16-16a16 16 0 0 1 16 16ZM52.8 68h158.4l-11.3 62.1a11.9 11.9 0 0 1-11.8 9.9H65.9Z"
               />
             </svg>
-          </nuxt-link>
+          </button>
           <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path
               fill="none"
@@ -63,6 +66,10 @@ const props = defineProps({
 })
 
 const modules = [Pagination]
+
+const handleClickProduct = () => {
+  navigateTo(`products/${props.product.id}`)
+}
 </script>
 
 <style lang="scss">

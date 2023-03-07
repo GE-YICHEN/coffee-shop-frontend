@@ -20,6 +20,9 @@ if (process.client) {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap');
+:root {
+  --el-color-primary: #362711 !important;
+}
 
 html {
   width: 100%;
