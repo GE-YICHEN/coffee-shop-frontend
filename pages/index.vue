@@ -32,14 +32,13 @@
           </svg>
           熱銷商品
         </h2>
-        <div class="mt-8 flex justify-between flex-wrap">
-          <div
+        <div class="mt-8 grid grid-cols-1 gap-8 justify-items-center sm:grid-cols-2 lg:grid-cols-4">
+          <ProductCard
             v-for="product in bestSellers"
             :key="product.id"
-            class="basis-full mt-8 flex justify-center sm:basis-1/2 lg:basis-auto"
-          >
-            <ProductCard :product="product"></ProductCard>
-          </div>
+            class="max-w-[17rem]"
+            :product="product"
+          ></ProductCard>
         </div>
       </div>
     </section>
@@ -143,14 +142,7 @@
                   {{ item.description }}
                 </p>
                 <div class="text-base flex">
-                  <div>
-                    <i
-                      v-for="i in 5"
-                      :key="i"
-                      class="ml-1"
-                      :class="[calcFeedbackStar(item, i)]"
-                    ></i>
-                  </div>
+                  <FeedbackStar :feedback-score="item.score"></FeedbackStar>
                 </div>
               </div>
             </SwiperSlide>
@@ -252,22 +244,6 @@ const feedbackList = [
 ]
 
 const modules = [Autoplay, Pagination, Navigation]
-
-const calcFeedbackStar = (item, index) => {
-  const STAR = 'fa-solid fa-star'
-  const HALF_STAR = 'fa-regular fa-star-half-stroke'
-  const HOLLOW_STAR = 'fa-regular fa-star'
-
-  const differenceBetweenScore = item.score - index
-
-  if (differenceBetweenScore >= 0) {
-    return STAR
-  } else if (differenceBetweenScore > -1 && differenceBetweenScore < 0) {
-    return HALF_STAR
-  } else {
-    return HOLLOW_STAR
-  }
-}
 
 const blogList = [
   {

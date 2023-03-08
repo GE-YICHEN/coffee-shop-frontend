@@ -8,11 +8,9 @@
 if (process.client) {
   window.addEventListener('scroll', () => {
     document.body.toggleAttribute('scroll', true)
-    if (this.timer) clearTimeout(this.timer)
-
-    this.timer = setTimeout(() => {
+    if (window.timer) clearTimeout(window.timer)
+    window.timer = setTimeout(() => {
       document.body.toggleAttribute('scroll')
-      console.log(this.timer)
     }, 500)
   })
 }
@@ -36,8 +34,10 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
+}
+
+body {
   overflow: overlay;
-  scroll-behavior: smooth;
 }
 
 * {
@@ -45,22 +45,24 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 8px;
+  background: transparent;
 }
-::-webkit-scrollbar-track {
+/* ::-webkit-scrollbar-track {
   -webkit-border-radius: 10px;
   border-radius: 10px;
   margin: 0 2px 0;
-}
+} */
 ::-webkit-scrollbar-thumb {
   -webkit-border-radius: 4px;
   border-radius: 4px;
+  border: 5px solid transparent;
+  background-clip: content-box;
   background: transparent;
-  transition: all 0.3s;
 }
 
 ::-webkit-scrollbar-thumb:hover,
-body[scroll] ::-webkit-scrollbar-thumb {
+body[scroll]::-webkit-scrollbar-thumb {
   background: rgb(189, 188, 188);
 }
 </style>

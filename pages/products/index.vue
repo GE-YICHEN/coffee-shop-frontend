@@ -1,9 +1,9 @@
 <template>
   <div class="max-w-7xl mx-auto py-8 px-5 flex">
-    <AsideProduct class="max-h-[70rem] w-0 md:w-[25%] mr-5 overflow-y-scroll"></AsideProduct>
+    <AsideProduct class="max-h-[70rem] w-0 md:w-[25%] mr-5 overflow-y-auto"></AsideProduct>
     <div class="flex-1">
       <div class="flex justify-end">
-        <el-select v-model="sortType" placeholder="Sort by">
+        <el-select v-model="sortType" class="sort" placeholder="Sort by">
           <el-option
             v-for="option in sortTypes"
             :key="option.value"
@@ -16,7 +16,7 @@
         <ProductCard
           v-for="product in productList"
           :key="product.id"
-          class=""
+          class="max-w-[17rem]"
           :product="product"
         ></ProductCard>
       </div>
@@ -75,6 +75,16 @@ const productList = [
       'https://shoplineimg.com/589406e472fdc0fc4b027e01/63d929dc62463845ca2e9487/800x.webp?source_format=png',
       'https://shoplineimg.com/589406e472fdc0fc4b027e01/634687203b4ad3001314d4d5/800x.webp?source_format=jpg'
     ]
+  },
+  {
+    id: 5675,
+    name: 'EEEEEEEEEEEEEE',
+    originPrice: 777,
+    onSalePrice: null,
+    pic: [
+      'https://shoplineimg.com/589406e472fdc0fc4b027e01/63d929dc62463845ca2e9487/800x.webp?source_format=png',
+      'https://shoplineimg.com/589406e472fdc0fc4b027e01/634687203b4ad3001314d4d5/800x.webp?source_format=jpg'
+    ]
   }
 ]
 
@@ -109,11 +119,13 @@ definePageMeta({
 </script>
 
 <style lang="scss">
-.el-input__wrapper {
-  box-shadow: none;
-  &:hover,
-  &:active {
-    box-shadow: none !important;
+.sort {
+  .el-input__wrapper {
+    box-shadow: none;
+    &:hover,
+    &:active {
+      box-shadow: none !important;
+    }
   }
 }
 </style>
