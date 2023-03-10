@@ -1,6 +1,6 @@
 <template>
   <div
-    class="product w-56 rounded-lg overflow-hidden shadow-xl cursor-pointer"
+    class="product flex flex-col w-full rounded-lg overflow-hidden shadow-xl cursor-pointer"
     @click="handleClickProduct()"
   >
     <Swiper
@@ -8,23 +8,29 @@
         clickable: true
       }"
       :modules="modules"
-      class="w-full h-52"
+      class="w-full min-h-[13rem]"
     >
       <SwiperSlide v-for="pic in props.product.pic" :key="pic" class="flex h-full w-full">
         <img class="block h-full w-full object-cover" :src="pic" alt="示意圖" />
       </SwiperSlide>
     </Swiper>
-    <div class="p-4">
+    <div class="flex-1 p-4 flex flex-col justify-between">
       <h5 class="font-semibold">{{ props.product.name }}</h5>
       <div class="mt-3 flex">
-        <div class="flex-1">
+        <div class="flex-1 flex flex-col justify-end">
           <p class="text-sm">
-            <span class="text-gray-400 line-through"> ${{ props.product.originPrice }} </span>
-            <span class="ml-2 px-1 font-bold bg-yellow-300">{{
+            <span
+              :class="[
+                props.product.onSalePrice ? 'text-gray-400 line-through' : 'font-bold text-base'
+              ]"
+            >
+              ${{ props.product.originPrice }}
+            </span>
+            <span v-if="props.product.onSalePrice" class="ml-2 px-1 font-bold bg-yellow-300">{{
               props.product.onSalePrice - props.product.originPrice
             }}</span>
           </p>
-          <p class="font-bold">${{ props.product.onSalePrice }}</p>
+          <p v-if="props.product.onSalePrice" class="font-bold">${{ props.product.onSalePrice }}</p>
         </div>
         <div class="flex items-center gap-4">
           <button class="bg-[#483519] rounded-full p-2" @click="handleClickProduct()">

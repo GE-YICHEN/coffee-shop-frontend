@@ -5,6 +5,7 @@
       <slot></slot>
     </main>
     <TheFooter />
+    <el-backtop />
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-[250px] w-full shadow-md rounded-lg">
+  <div class="flex h-[250px] w-full shadow-md rounded-lg overflow-hidden">
     <img class="h-full w-1/3 object-cover" :src="props.blog.pic" alt="Blog 圖" />
     <div class="flex-1 p-6 flex flex-col justify-center items-start gap-5">
       <h2 class="font-bold lg:text-lg">{{ props.blog.title }}</h2>

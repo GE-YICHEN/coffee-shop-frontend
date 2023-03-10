@@ -14,37 +14,37 @@
 const categoryListGroup = [
   {
     id: 111,
-    name: 'AAAAAAAA',
+    name: '咖啡豆',
     childrenCategory: [
       {
         id: 222,
-        name: 'aaaa'
+        name: '單品咖啡豆'
       },
       {
         id: 333,
-        name: 'bbbb'
+        name: '配方咖啡豆'
       },
       {
         id: 444,
-        name: 'ccccc'
+        name: '珍珠圓豆'
       }
     ]
   },
   {
     id: 555,
-    name: 'BBBBBBB',
+    name: '風味',
     childrenCategory: [
       {
         id: 666,
-        name: 'ddd'
+        name: '花香'
       },
       {
         id: 777,
-        name: 'eeeee'
+        name: '水果味'
       },
       {
         id: 888,
-        name: 'fffff'
+        name: '甜味'
       }
     ]
   }

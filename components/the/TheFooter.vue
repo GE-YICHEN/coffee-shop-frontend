@@ -101,10 +101,10 @@
         <h3 class="text-lg">關於我們</h3>
         <ul class="flex flex-col gap-4 text-sm font-thin">
           <li>
-            <nuxt-link to="#"> 關於LIN COFFEE </nuxt-link>
+            <nuxt-link to="/about_us"> 關於LIN COFFEE </nuxt-link>
           </li>
           <li>
-            <nuxt-link to="#"> 門市資訊 </nuxt-link>
+            <nuxt-link to="/about_us"> 門市資訊 </nuxt-link>
           </li>
         </ul>
       </div>
@@ -112,13 +112,13 @@
         <h3 class="text-lg">顧客服務</h3>
         <ul class="flex flex-col gap-4 text-sm font-thin">
           <li>
-            <nuxt-link to="#"> 常見問題FAQ </nuxt-link>
+            <nuxt-link to="/faq"> 常見問題FAQ </nuxt-link>
           </li>
           <li>
-            <nuxt-link to="#"> 購物須知 </nuxt-link>
+            <nuxt-link to="/faq"> 購物須知 </nuxt-link>
           </li>
           <li>
-            <nuxt-link to="#"> 退貨政策 </nuxt-link>
+            <nuxt-link to="/faq"> 退貨政策 </nuxt-link>
           </li>
         </ul>
       </div>
@@ -126,8 +126,10 @@
         <h3 class="text-lg">聯絡我們</h3>
         <ul class="flex flex-col gap-5 text-sm font-thin">
           <li class="flex gap-2 h-5">
-            <img class="h-full w-auto" src="@/assets/gps-icon.png" />
-            330桃園市桃園區中正路1188號
+            <i class="fa-solid fa-location-dot h-full w-auto flex items-center"></i>
+            <a href="http://maps.google.com/?q=330桃園市桃園區中正路1188號">
+              330桃園市桃園區中正路1188號</a
+            >
           </li>
           <li class="flex gap-2 h-5">
             <svg class="h-full w-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
@@ -136,7 +138,7 @@
                 d="M176 224C96.6 224 32 159.4 32 80a56.2 56.2 0 0 1 48.9-55.6A16.3 16.3 0 0 1 97.6 34l20.1 46.9a15.9 15.9 0 0 1-1.4 15.1l-16.6 25.4a76.5 76.5 0 0 0 35.2 35l25.1-16.7a15.6 15.6 0 0 1 15.1-1.3l46.9 20a16.3 16.3 0 0 1 9.6 16.7A56.2 56.2 0 0 1 176 224ZM82.9 40.3A40 40 0 0 0 48 80a128.1 128.1 0 0 0 128 128a40 40 0 0 0 39.7-34.9l-46.9-20l-25 16.7a16 16 0 0 1-15.7 1.1a92.5 92.5 0 0 1-42.8-42.6a16 16 0 0 1 1-15.7L103 87.2ZM135 156.5Z"
               />
             </svg>
-            03-1234567
+            <a href="tel:+03-1234567">03-1234567</a>
           </li>
           <li class="flex gap-2 h-5">
             <svg class="h-full w-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -145,7 +147,7 @@
                 d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5l8-5v10zm-8-7L4 6h16l-8 5z"
               />
             </svg>
-            abcd1234@gmail.com
+            <a href="mailto:abcd1234@gmail.com">abcd1234@gmail.com</a>
           </li>
         </ul>
       </div>

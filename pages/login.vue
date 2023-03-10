@@ -7,15 +7,25 @@
           v-if="pageType === 'login'"
           class="h-full mx-auto lg:ml-10 lg:mr-auto max-w-sm flex flex-col justify-center relative z-50"
         >
-          <h1 class="text-4xl font-black">Login</h1>
+          <h1 class="text-4xl font-black text-center">Login</h1>
           <Form
             class="mt-[60px] px-7 flex flex-col gap-8"
             :validation-schema="signInSchema"
             @submit="handleSignIn"
           >
-            <CommonInput name="email" type="email" label="Email Address"></CommonInput>
+            <CommonInput
+              v-model="email"
+              name="email"
+              type="email"
+              label="Email Address"
+            ></CommonInput>
             <div>
-              <CommonInput name="password" type="password" label="Password"></CommonInput>
+              <CommonInput
+                v-model="password"
+                name="password"
+                type="password"
+                label="Password"
+              ></CommonInput>
               <div class="mt-1 text-xs text-blue-500 cursor-pointer" @click="handleForgotPassword">
                 Forgot Password?
               </div>
@@ -45,15 +55,26 @@
           v-else
           class="h-full mx-auto lg:ml-10 lg:mr-auto max-w-sm flex flex-col justify-center relative z-50"
         >
-          <h1 class="text-4xl font-black">Register</h1>
+          <h1 class="text-4xl font-black text-center">Register</h1>
           <Form
             class="mt-[60px] px-7 flex flex-col gap-8"
             :validation-schema="registerSchema"
             @submit="handleRegister"
           >
-            <CommonInput name="email" type="email" label="Email Address"></CommonInput>
-            <CommonInput name="password" type="password" label="Password"></CommonInput>
             <CommonInput
+              v-model="email"
+              name="email"
+              type="email"
+              label="Email Address"
+            ></CommonInput>
+            <CommonInput
+              v-model="password"
+              name="password"
+              type="password"
+              label="Password"
+            ></CommonInput>
+            <CommonInput
+              v-model="confirmPassword"
               name="confirmPassword"
               type="password"
               label="Confirm Password"
@@ -86,11 +107,19 @@
 <script setup>
 import { Form } from 'vee-validate'
 import { object, string, ref as YRef } from 'yup'
+const email = ref('')
+
+const password = ref('')
+
+const confirmPassword = ref('')
 
 const pageType = ref('login')
 
 const chagePageType = (type) => {
   pageType.value = type
+  email.value = ''
+  password.value = ''
+  confirmPassword.value = ''
 }
 
 const signInSchema = object({
