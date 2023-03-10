@@ -26,6 +26,12 @@ export default defineNuxtConfig({
         {
           rel: 'stylesheet',
           href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css'
+        },
+        {
+          rel: 'stylesheet',
+          href: 'https://unpkg.com/leaflet@1.9.3/dist/leaflet.css',
+          integrity: 'sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=',
+          crossorigin: ''
         }
       ]
     }

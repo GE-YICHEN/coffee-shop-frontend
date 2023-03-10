@@ -12,35 +12,20 @@
       <nav class="hidden md:block">
         <ul class="flex gap-9 items-center">
           <li
+            v-for="link in linkList"
+            :key="link.link"
             class="relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-white after:transition-all hover:after:w-full"
           >
-            <nuxt-link to="/"> Home </nuxt-link>
-          </li>
-          <li
-            class="relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-white after:transition-all hover:after:w-full"
-          >
-            <nuxt-link to="/products"> Product </nuxt-link>
-          </li>
-          <li
-            class="relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-white after:transition-all hover:after:w-full"
-          >
-            <nuxt-link to="/faq"> FAQ </nuxt-link>
-          </li>
-          <li
-            class="relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-white after:transition-all hover:after:w-full"
-          >
-            <nuxt-link to="/about_us"> About Us </nuxt-link>
+            <nuxt-link :to="link.link"> {{ link.label }} </nuxt-link>
           </li>
         </ul>
       </nav>
       <div class="flex items-center gap-4 text-lg">
-        <div>
-          <Icon name="simple-line-icons:magnifier" class="cursor-pointer" />
-        </div>
-        <div>
+        <NavSearch />
+        <div class="flex items-center">
           <Icon name="humbleicons:user" class="cursor-pointer" />
         </div>
-        <div>
+        <div class="flex items-center">
           <Icon name="clarity:shopping-cart-line" class="cursor-pointer" />
         </div>
       </div>
@@ -48,6 +33,29 @@
   </header>
 </template>
 
-<script setup></script>
+<script setup>
+const linkList = [
+  {
+    label: 'Home',
+    link: '/'
+  },
+  {
+    label: 'Product',
+    link: '/products'
+  },
+  {
+    label: 'FAQ',
+    link: '/faq'
+  },
+  {
+    label: 'About Us',
+    link: '/about_us'
+  },
+  {
+    label: 'Blog',
+    link: '/blog'
+  }
+]
+</script>
 
 <style lang="scss" scoped></style>
